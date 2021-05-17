@@ -96,7 +96,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="TRANSFER MONEY">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" OnClick="LinkButton1_Click">Transfer Money</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" PostBackUrl='<%#"TransferMoney.aspx?k="+ Eval("Cid") %>'>Transfer Money</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Fields>

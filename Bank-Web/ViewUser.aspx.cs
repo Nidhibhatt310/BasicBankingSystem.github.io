@@ -32,9 +32,4 @@ public partial class ViewUser : System.Web.UI.Page
         Response.Redirect("Customers.aspx");
     }
     
-
-    protected void LinkButton1_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("TransferMoney.aspx");
-    }
 }

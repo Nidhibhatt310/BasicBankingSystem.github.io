@@ -13,7 +13,12 @@ public partial class TransferMoney : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            binddrop();
+                string id = Request.QueryString["k"];
+                HiddenField1.Value = id.ToString();
+
+                Class1.connection();
+
+                binddrop();
         }
     }
     public void binddrop()
@@ -38,7 +43,8 @@ public partial class TransferMoney : System.Web.UI.Page
             Class1.connection();
             string drop1 = DropDownList1.SelectedValue.ToString();
             string q = "update Customer set moneyrecv='"+TextBox1.Text+"' ,Cbalc=(Cbalc+moneyrecv) where Cid='"+drop1+"'";
-        
+             string q1 = "update Customer set moneysend='"+TextBox1.Text+"', Cbalc=(Cbalc-moneysend) where Cid='"+HiddenField1.Value+"'";
+        Class1.execute(q1);
             if (Class1.execute(q))
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Money Transfered');window.location ='../Customers.aspx';", true);

@@ -45,7 +45,8 @@
             text-align: left;
             font-weight: bold;
             color: black;
-            margin-left: 100px;
+            margin-left: 150px;
+            margin-top:50px;
             background-color: white; /* Black w/opacity/see-through */
             table-layout: fixed;
         }
@@ -54,14 +55,12 @@
 <body>
 
     <form id="form1" runat="server">
-       
+         <div class="bg-text1" id="demo">
         <div>
             <div id="MyDiv">
-
-                <div class="bg-text1" id="demo">
                     <h1>Receiver Details</h1>
-                    <form>
-                        <table id="Table1" height="110px" width="489px">
+                    </div>
+                        <table id="Table1" height="200px" width="500px">
                             <tr>
                                 <td>NAME:
                                 </td>
@@ -79,7 +78,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td>
+                                    <asp:HiddenField ID="HiddenField1" runat="server" />
+                                </td>
                                 <td style="text-align: center;">
                                     <asp:Button ID="Button2" runat="server" Text="Transfer" CausesValidation="true" OnClick="Button2_Click" /></td>
                             </tr>

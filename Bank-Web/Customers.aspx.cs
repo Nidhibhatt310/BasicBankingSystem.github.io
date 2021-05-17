@@ -16,7 +16,7 @@ public partial class Customers : System.Web.UI.Page
     public void bindgrid()
     {
         Class1.connection();
-        string q = "select Cid,Cname,Cemail,(Cbalc+moneyrecv) as Cbalc from Customer";
+        string q = "select Cid,Cname,Cemail,(Cbalc+moneyrecv-moneysend) as Cbalc from Customer";
         DataSet ds = Class1.filldata(q);
 
         GridView1.DataSource = ds;
